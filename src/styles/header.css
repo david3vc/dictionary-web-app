@@ -1,0 +1,15 @@
+.container-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-header__options{
+    display: flex;
+    margin-top: 10px;
+    
+}
+
+.options__icon-pipe{
+    margin-left: 15px;
+    margin-top: 3px;
+}
