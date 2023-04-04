@@ -1,0 +1,18 @@
+.container-word{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 340px;
+    margin: auto;
+    margin-top: 35px;
+}
+
+.container-word__term{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-word__term__pronunciation{
+    margin-top: 10px;
+    color: #a445ed;
+}

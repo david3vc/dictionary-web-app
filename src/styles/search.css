@@ -30,6 +30,7 @@
 
 .themeInputDark {
     background-color: var(--color-background-input-dark);
+    color: white;
 }
 
 .themeInputLight {

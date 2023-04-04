@@ -18,7 +18,7 @@ const Search = ({ theme }: baseProps) => {
     return (
         <div className={`container-search ${themeInput}`}>
             <div className="container-search__input">
-                <input type="text" className={`${themeInput}`} />
+                <input type="text" className={themeInput} />
             </div>
             <div className="container-search__icon">
                 <img src={iconoSearch} alt="" />
