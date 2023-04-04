@@ -8,8 +8,6 @@ interface baseProps {
 }
 
 const Checkbox = ({ setTheme, theme }: baseProps) => {
-    // const [theme, setTheme] = useState(DARK_THEME);
-
     const toggleTheme = () => {
         if (theme === LIGHT_THEME) setTheme(DARK_THEME);
         else setTheme(LIGHT_THEME);

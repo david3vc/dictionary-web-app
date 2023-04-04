@@ -1,0 +1,32 @@
+:root {
+    --color-background-input-dark: #3a3a3a;
+    --color-background-input-ligth: #e9e9e9;
+}
+
+.container-search{
+    display: flex;
+    justify-content: space-between;
+    width: 310px;
+    margin: auto;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.container-search__input input {
+    border:none;
+    width: 160%;
+}
+
+.container-search__input input:focus {
+    outline: none;
+}
+
+.themeInputDark {
+    background-color: var(--color-background-input-dark);
+    color: var(--color-background-input-ligth);
+}
+
+.themeInputLight {
+    background-color: var(--color-background-input-ligth);
+    color: var(--color-background-input-dark);
+}
