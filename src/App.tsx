@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import Header from './components/Header'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import Header from "./components/Header";
+import "./App.css";
+import { DARK_THEME } from "./constants";
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [theme, setTheme] = useState(DARK_THEME);
 
-  return (
-    <div>
-      <Header />
-    </div>
-  )
+    return (
+        <div>
+            <Header setTheme={setTheme} theme={theme} />
+        </div>
+    );
 }
 
-export default App
+export default App;
