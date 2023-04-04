@@ -1,16 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGripLinesVertical } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import iconoBook from "../assets/images/logo.svg";
 import iconoMoon from "../assets/images/icon-moon.svg";
 import iconArrowDown from "../assets/images/icon-arrow-down.svg";
 import Checkbox from "./Checkbox";
 import "../styles/header.css";
+import { BOX_SHADOW_DARK_THEME, BOX_SHADOW_LIGHT_THEME, LIGHT_THEME } from "../constants";
 
 const Main = styled("div")`
     font-family: sans-serif;
-    background: #f0f0f0;
     height: 100vh;
 `;
 
@@ -28,8 +28,6 @@ const DropDownHeader = styled("div")`
 const DropDownListContainer = styled("div")``;
 
 const DropDownList = styled("ul")`
-    position: relative;
-    right: 50px;
     cursor: pointer;
     width: 8.5em;
     padding: 1em;
@@ -39,15 +37,16 @@ const DropDownList = styled("ul")`
         padding-top: 0.8em;
     }
     border-radius: 15px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+    position:absolute;
+    /* left: 110px; */ 
+    right: 150px;
+    z-index:3;
 `;
 
 const ListItem = styled("li")`
     list-style: none;
     margin-bottom: 3px;
-    &:hover {
-        color: #a445ed;
-    }
 `;
 
 const options = ["San Serif", "Serif", "Mono"];
@@ -60,6 +59,7 @@ interface baseProps {
 const Header = ({ setTheme, theme }: baseProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState("");
+    const [themeBoxShadow, setThemeBoxShadow] = useState(BOX_SHADOW_DARK_THEME);
 
     const toggling = () => setIsOpen(!isOpen);
 
@@ -68,6 +68,12 @@ const Header = ({ setTheme, theme }: baseProps) => {
         setIsOpen(false);
         console.log(selectedOption);
     };
+
+    useEffect(() => {
+        if (theme === LIGHT_THEME) setThemeBoxShadow(BOX_SHADOW_DARK_THEME);
+        else setThemeBoxShadow(BOX_SHADOW_LIGHT_THEME);
+    }, [theme]);
+    
     return (
         <div className="container-header">
             <div className="container-header__logo">
@@ -75,7 +81,7 @@ const Header = ({ setTheme, theme }: baseProps) => {
             </div>
             <div className="container-header__options">
                 <div className="options__typography">
-                    <DropDownContainer>
+                    <DropDownContainer className={theme}>
                         <DropDownHeader onClick={toggling} className={theme} >
                             <span>
                                 {selectedOption || "San Serif"}
@@ -83,8 +89,8 @@ const Header = ({ setTheme, theme }: baseProps) => {
                             <img src={iconArrowDown} alt="" />
                         </DropDownHeader>
                         {isOpen && (
-                            <DropDownListContainer>
-                                <DropDownList>
+                            <DropDownListContainer className={theme}>
+                                <DropDownList className={`${theme} ${themeBoxShadow}`}>
                                     {options.map((option) => (
                                         <ListItem
                                             onClick={onOptionClicked(option)}
