@@ -1,0 +1,32 @@
+.lista__partOfSpeech {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lista__partOfSpeech__bold{
+    font-weight: bold;
+}
+
+.lista__partOfSpeech__line{
+    border-bottom: 1.5px solid rgb(201, 201, 201);
+    width: 70%;
+    margin-bottom: 7px;
+}
+
+.lista__meanings{
+    padding-inline-start: 20px;
+}
+
+.lista__synonyms, .lista__antonyms{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.lista__antonyms__term, .lista__synonyms__term{
+    margin-right: 30px;
+}
+
+.lista__synonyms__collection, .lista__antonyms__collection{
+    color: rgb(164, 69, 237, 1);
+    font-weight: bold;
+}

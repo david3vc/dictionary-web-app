@@ -7,7 +7,6 @@
 .container-header{
     display: flex;
     justify-content: space-between;
-    width: 340px;
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -16,7 +15,6 @@
 .container-header__options{
     display: flex;
     margin-top: 10px;
-    
 }
 
 .options__icon-pipe{

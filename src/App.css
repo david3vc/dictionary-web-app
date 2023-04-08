@@ -3,6 +3,10 @@
     --color-background-ligth: #ffffff;
 }
 
+.container {
+  padding: 0px 20px;
+}
+
 .dark {
   background-color: var(--color-background-dark);
   color: var(--color-background-ligth);

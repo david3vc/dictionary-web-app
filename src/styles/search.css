@@ -4,24 +4,27 @@
     --color-border-input: #a445ed;
 }
 
-.container-search{
+.container-search {
     display: flex;
     justify-content: space-between;
-    width: 310px;
     margin: auto;
     padding: 15px;
     border-radius: 15px;
 }
 
-.container-search:focus-within{
+.container-search:focus-within {
     border-color: var(--color-border-input);
     border-style: solid;
     border-width: 2px;
 }
 
+.container-search__input {
+    flex-grow: 4;
+}
+
 .container-search__input input {
-    border:none;
-    width: 160%;
+    border: none;
+    width: 100%;
 }
 
 .container-search__input input:focus {
@@ -35,4 +38,8 @@
 
 .themeInputLight {
     background-color: var(--color-background-input-ligth);
+}
+
+.text-danger {
+    color: red;
 }
