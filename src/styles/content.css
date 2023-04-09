@@ -1,3 +1,7 @@
+.container-content{
+    margin-top: 35px;
+}
+
 .lista__partOfSpeech {
     display: flex;
     justify-content: space-between;
@@ -5,6 +9,11 @@
 
 .lista__partOfSpeech__bold{
     font-weight: bold;
+    font-style: italic;
+}
+
+.lista__meaning-term, .lista__synonyms__term, .lista__antonyms__term{
+    color: #757575;
 }
 
 .lista__partOfSpeech__line{
@@ -15,6 +24,10 @@
 
 .lista__meanings{
     padding-inline-start: 20px;
+}
+
+.color-morado li::marker{
+    color: rgb(164, 69, 237, 1);
 }
 
 .lista__synonyms, .lista__antonyms{

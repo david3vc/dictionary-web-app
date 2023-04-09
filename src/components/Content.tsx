@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { DefinitionModel, MeaningModel, ResponseModel } from "../types";
 import "../styles/content.css";
+import { DARK_THEME, LIGHT_THEME } from "../constants";
 
 interface baseProps {
     data: ResponseModel[];
     typography: string;
+    theme: string;
 }
 
-const Content = ({ data, typography }: baseProps) => {
+const Content = ({ data, typography, theme }: baseProps) => {
     const meanings: MeaningModel[] = data.flatMap((item) => item.meanings);
 
     const allEqual: boolean = meanings.every(
@@ -43,10 +45,10 @@ const Content = ({ data, typography }: baseProps) => {
                                 <div className="lista__partOfSpeech__line" />
                             </div>
 
-                            {meaning.partOfSpeech !== "" && <p>Meaning</p>}
+                            {meaning.partOfSpeech !== "" && <p className="lista__meaning-term">Meaning</p>}
                             {item.definitions.length > 0 &&
                                 item.definitions.map((definition, i) => (
-                                    <ul key={i} className="lista__meanings">
+                                    <ul key={i} className={theme === LIGHT_THEME ? "lista__meanings color-morado" : "lista__meanings"}>
                                         <li>{definition.definition}</li>
                                     </ul>
                                 ))}
@@ -87,10 +89,10 @@ const Content = ({ data, typography }: baseProps) => {
                             <div className="lista__partOfSpeech__line" />
                         </div>
 
-                        {meaning.partOfSpeech !== "" && <p>Meaning</p>}
+                        {meaning.partOfSpeech !== "" && <p className="lista__meaning-term">Meaning</p>}
                         {meaning.definitions.length > 0 &&
                             meaning.definitions.map((definition, i) => (
-                                <ul key={i} className="lista__meanings">
+                                <ul key={i} className={theme === LIGHT_THEME ? "lista__meanings color-morado" : "lista__meanings"}>
                                     <li>{definition.definition}</li>
                                 </ul>
                             ))}

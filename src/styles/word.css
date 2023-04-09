@@ -11,6 +11,11 @@
     flex-direction: column;
 }
 
+.container-word__term__child{
+    font-size: 32px;
+    font-weight: bold;
+}
+
 .container-word__term__pronunciation{
     margin-top: 10px;
     color: #a445ed;

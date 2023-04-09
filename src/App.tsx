@@ -7,6 +7,7 @@ import Search from "./components/Search";
 import Word from "./components/Word";
 import Content from "./components/Content";
 import { ResponseModel } from "./types";
+import Footer from "./components/Footer";
 
 function App() {
     const [theme, setTheme] = useState(DARK_THEME);
@@ -18,7 +19,8 @@ function App() {
             <Header setTheme={setTheme} theme={theme} setTypography={setTypography} typography={typography} />
             <Search theme={theme} setData={setData} typography={typography} />
             <Word data={data} typography={typography} />
-            <Content data={data} typography={typography} />
+            <Content data={data} typography={typography} theme={theme} />
+            <Footer typography={typography} word={data[0]?.word ?? ''} theme={theme} />
         </div>
     );
 }
