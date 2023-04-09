@@ -1,5 +1,5 @@
 .container-content{
-    margin-top: 35px;
+    margin: auto;
 }
 
 .lista__partOfSpeech {
@@ -54,4 +54,15 @@
 
 .mono{
     font-family: 'Inconsolata', monospace;
+}
+
+@media screen and (min-width: 992px) {
+    .container-content {
+        width: 50%;
+        font-size: 20px;
+    }
+
+    .lista__partOfSpeech__line{
+        width: 85%;
+    }
 }

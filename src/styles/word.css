@@ -4,6 +4,7 @@
     align-items: center;
     margin: auto;
     margin-top: 35px;
+    margin-bottom: 35px;
 }
 
 .container-word__term{
@@ -21,6 +22,10 @@
     color: #a445ed;
 }
 
+.container-word__sound{
+    cursor: pointer;
+}
+
 .sanSerif{
     font-family: 'Inter', sans-serif;
 }
@@ -31,4 +36,18 @@
 
 .mono{
     font-family: 'Inconsolata', monospace;
+}
+
+@media screen and (min-width: 992px) {
+    .container-word {
+        width: 50%;
+    }
+
+    .container-word__term__child{
+        font-size: 70px;
+    }
+
+    .container-word__term__pronunciation{
+        font-size: 29px;
+    }
 }

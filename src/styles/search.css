@@ -12,6 +12,10 @@
     border-radius: 15px;
 }
 
+.validation-search{
+    margin: auto;
+}
+
 .container-search:focus-within {
     border-color: var(--color-border-input);
     border-style: solid;
@@ -54,4 +58,14 @@
 
 .mono{
     font-family: 'Inconsolata', monospace;
+}
+
+@media screen and (min-width: 992px) {
+    .container-search, .validation-search{
+        width: 50%;   
+    }
+
+    .search__input, .text-danger{
+        font-size: 20px;
+    }
 }

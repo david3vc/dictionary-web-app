@@ -103,7 +103,7 @@ const Header = ({ setTheme, theme, setTypography, typography }: baseProps) => {
                         {isOpen && (
                             <DropDownListContainer className={theme}>
                                 <DropDownList
-                                    className={`${theme} ${themeBoxShadow}`}
+                                    className={`${theme} ${themeBoxShadow} lista-opciones`}
                                 >
                                     {options.map((option) => (
                                         <ListItem

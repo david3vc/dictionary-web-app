@@ -49,7 +49,7 @@ const Search = ({ theme, setData, typography }: baseProps) => {
                 <div className="container-search__input">
                     <input
                         type="text"
-                        className={`${themeInput} ${typography}`}
+                        className={`${themeInput} ${typography} search__input`}
                         name="word"
                         value={formik.values.word ?? ""}
                         onChange={formik.handleChange}
@@ -62,9 +62,11 @@ const Search = ({ theme, setData, typography }: baseProps) => {
                     <img src={iconoSearch} alt="" />
                 </div>
             </div>
-            {(formik.touched.word ?? false) && formik.errors.word != null && (
-                <small className={`text-danger ${typography}`}>{formik.errors.word}</small>
-            )}
+            <div className="validation-search">
+                {(formik.touched.word ?? false) && formik.errors.word != null && (
+                    <small className={`text-danger ${typography}`}>{formik.errors.word}</small>
+                )}
+            </div>
         </>
     );
 };

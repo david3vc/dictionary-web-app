@@ -42,3 +42,31 @@
 .mono{
     font-family: 'Inconsolata', monospace;
 }
+
+@media screen and (min-width: 992px) {
+    .container-header{
+        width: 50%;
+    }
+
+    .lista-opciones{
+        right: 350px!important;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .lista-opciones{
+        right: 400px!important;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .lista-opciones{
+        right: 450px!important;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    .lista-opciones{
+        right: 500px!important;
+    }
+}
