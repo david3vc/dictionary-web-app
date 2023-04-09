@@ -15,3 +15,15 @@
     margin-top: 10px;
     color: #a445ed;
 }
+
+.sanSerif{
+    font-family: 'Inter', sans-serif;
+}
+
+.serif{
+    font-family: 'Lora', serif;
+}
+
+.mono{
+    font-family: 'Inconsolata', monospace;
+}

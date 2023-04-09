@@ -10,9 +10,10 @@ import { ResponseModel } from "../types";
 interface baseProps {
     theme: string;
     setData: React.Dispatch<React.SetStateAction<ResponseModel[]>>;
+    typography: string;
 }
 
-const Search = ({ theme, setData }: baseProps) => {
+const Search = ({ theme, setData, typography }: baseProps) => {
     const formik = useFormik({
         initialValues: {
             word: "",
@@ -44,11 +45,11 @@ const Search = ({ theme, setData }: baseProps) => {
 
     return (
         <>
-            <div className={`container-search ${themeInput}`}>
+            <div className={`container-search ${themeInput} ${typography}`}>
                 <div className="container-search__input">
                     <input
                         type="text"
-                        className={themeInput}
+                        className={`${themeInput} ${typography}`}
                         name="word"
                         value={formik.values.word ?? ""}
                         onChange={formik.handleChange}
@@ -62,7 +63,7 @@ const Search = ({ theme, setData }: baseProps) => {
                 </div>
             </div>
             {(formik.touched.word ?? false) && formik.errors.word != null && (
-                <small className="text-danger">{formik.errors.word}</small>
+                <small className={`text-danger ${typography}`}>{formik.errors.word}</small>
             )}
         </>
     );

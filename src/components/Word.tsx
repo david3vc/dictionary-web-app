@@ -5,9 +5,10 @@ import { ResponseModel } from "../types";
 
 interface baseProps {
     data: ResponseModel[];
+    typography: string;
 }
 
-const Word = ({ data }: baseProps) => {
+const Word = ({ data, typography }: baseProps) => {
     const [res] = data;
 
     const audios = data.flatMap(item => item.phonetics);
@@ -23,7 +24,7 @@ const Word = ({ data }: baseProps) => {
     };
 
     return (
-        <div className="container-word">
+        <div className={`container-word ${typography}`}>
             <div className="container-word__term">
                 <span className="container-word__term__child">{res?.word}</span>
                 <span className="container-word__term__pronunciation">

@@ -43,3 +43,15 @@
 .text-danger {
     color: red;
 }
+
+.sanSerif{
+    font-family: 'Inter', sans-serif;
+}
+
+.serif{
+    font-family: 'Lora', serif;
+}
+
+.mono{
+    font-family: 'Inconsolata', monospace;
+}

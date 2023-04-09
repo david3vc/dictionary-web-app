@@ -30,3 +30,15 @@
 .boxShadowdark{
     box-shadow: var(--box-shadow-dark);
 }
+
+.sanSerif{
+    font-family: 'Inter', sans-serif;
+}
+
+.serif{
+    font-family: 'Lora', serif;
+}
+
+.mono{
+    font-family: 'Inconsolata', monospace;
+}

@@ -4,3 +4,6 @@ export const INPUT_DARK_THEME = 'themeInputDark';
 export const INPUT_LIGHT_THEME = 'themeInputLight';
 export const BOX_SHADOW_LIGHT_THEME = 'boxShadowlight';
 export const BOX_SHADOW_DARK_THEME = 'boxShadowdark';
+export const SAN_SERIF = 'sanSerif';
+export const SERIF = 'serif';
+export const MONO = 'mono';

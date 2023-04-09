@@ -4,9 +4,10 @@ import "../styles/content.css";
 
 interface baseProps {
     data: ResponseModel[];
+    typography: string;
 }
 
-const Content = ({ data }: baseProps) => {
+const Content = ({ data, typography }: baseProps) => {
     const meanings: MeaningModel[] = data.flatMap((item) => item.meanings);
 
     const allEqual: boolean = meanings.every(
@@ -29,7 +30,7 @@ const Content = ({ data }: baseProps) => {
     };
 
     return (
-        <div className="container-content">
+        <div className={`container-content ${typography}`}>
             <div className="container-content__lista">
                 {allEqual === false ? (
                     meanings.length > 0 &&

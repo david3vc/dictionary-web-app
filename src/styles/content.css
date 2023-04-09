@@ -30,3 +30,15 @@
     color: rgb(164, 69, 237, 1);
     font-weight: bold;
 }
+
+.sanSerif{
+    font-family: 'Inter', sans-serif;
+}
+
+.serif{
+    font-family: 'Lora', serif;
+}
+
+.mono{
+    font-family: 'Inconsolata', monospace;
+}
