@@ -7,3 +7,4 @@ export const BOX_SHADOW_DARK_THEME = 'boxShadowdark';
 export const SAN_SERIF = 'sanSerif';
 export const SERIF = 'serif';
 export const MONO = 'mono';
+export const INITIAL_SEARCH = 'keyboard';

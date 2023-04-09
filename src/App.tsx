@@ -1,5 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import Header from "./components/Header";
 import "./App.css";
 import { DARK_THEME, SAN_SERIF } from "./constants";
@@ -16,11 +15,20 @@ function App() {
 
     return (
         <div className="container">
-            <Header setTheme={setTheme} theme={theme} setTypography={setTypography} typography={typography} />
+            <Header
+                setTheme={setTheme}
+                theme={theme}
+                setTypography={setTypography}
+                typography={typography}
+            />
             <Search theme={theme} setData={setData} typography={typography} />
             <Word data={data} typography={typography} />
             <Content data={data} typography={typography} theme={theme} />
-            <Footer typography={typography} word={data[0]?.word ?? ''} theme={theme} />
+            <Footer
+                typography={typography}
+                word={data[0]?.word ?? ""}
+                theme={theme}
+            />
         </div>
     );
 }

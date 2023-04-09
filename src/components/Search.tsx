@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import iconoSearch from "../assets/images/icon-search.svg";
 import "../styles/search.css";
-import { INPUT_DARK_THEME, INPUT_LIGHT_THEME, LIGHT_THEME } from "../constants";
+import { INITIAL_SEARCH, INPUT_DARK_THEME, INPUT_LIGHT_THEME, LIGHT_THEME } from "../constants";
 import useFindWord from "../hooks/useFindWord";
 import { ResponseModel } from "../types";
 
@@ -27,7 +27,11 @@ const Search = ({ theme, setData, typography }: baseProps) => {
         onSubmit: (values) => searchWord(values.word),
     });
 
-    const { data: wordData, mutateAsync: searchWord, isSuccess } = useFindWord();
+    const {
+        data: wordData,
+        mutateAsync: searchWord,
+        isSuccess,
+    } = useFindWord();
 
     const [themeInput, setThemeInput] = useState(INPUT_DARK_THEME);
 
@@ -36,12 +40,13 @@ const Search = ({ theme, setData, typography }: baseProps) => {
         else setThemeInput(INPUT_LIGHT_THEME);
     }, [theme]);
 
-    useEffect(()=>{
-        if (isSuccess) {
-            console.log(wordData)
-            setData?.(wordData);
-        }
-    },[isSuccess])
+    useEffect(() => {
+        if (isSuccess) setData?.(wordData);
+    }, [isSuccess]);
+
+    useEffect(() => {
+        searchWord(INITIAL_SEARCH);
+    }, []);
 
     return (
         <>
@@ -63,9 +68,12 @@ const Search = ({ theme, setData, typography }: baseProps) => {
                 </div>
             </div>
             <div className="validation-search">
-                {(formik.touched.word ?? false) && formik.errors.word != null && (
-                    <small className={`text-danger ${typography}`}>{formik.errors.word}</small>
-                )}
+                {(formik.touched.word ?? false) &&
+                    formik.errors.word != null && (
+                        <small className={`text-danger ${typography}`}>
+                            {formik.errors.word}
+                        </small>
+                    )}
             </div>
         </>
     );

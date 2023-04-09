@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "../styles/checkbox.css";
 import { DARK_THEME, LIGHT_THEME } from "../constants";
 

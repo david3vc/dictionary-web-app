@@ -79,7 +79,6 @@ const Header = ({ setTheme, theme, setTypography, typography }: baseProps) => {
     const onOptionClicked = (typography: string, codigo: string) => () => {
         setSelectedOption(typography);
         setIsOpen(false);
-        console.log(typography, selectedOption);
         setTypography(codigo);
     };
 

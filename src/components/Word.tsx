@@ -11,14 +11,14 @@ interface baseProps {
 const Word = ({ data, typography }: baseProps) => {
     const [res] = data;
 
-    const audios = data.flatMap(item => item.phonetics);
+    const audios = data.flatMap((item) => item.phonetics);
 
-    const audio = audios.find(item => item?.audio !== '');
+    const audio = audios.find((item) => item?.audio !== "");
 
     const play = () => {
         const sound = new Howl({
-            src: audio?.audio ?? '',
-        })
+            src: audio?.audio ?? "",
+        });
 
         sound.play();
     };

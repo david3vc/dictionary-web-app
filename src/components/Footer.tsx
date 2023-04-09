@@ -1,5 +1,5 @@
-import { DARK_THEME, LIGHT_THEME } from "../constants";
-import iconoBook from "../assets/images/icon-new-window.svg";
+import { DARK_THEME } from "../constants";
+import iconoNewWindow from "../assets/images/icon-new-window.svg";
 import "../styles/footer.css";
 
 interface baseProps {
@@ -16,13 +16,19 @@ const Footer = ({ typography, word, theme }: baseProps) => {
             <span className="footer__source">Source</span>
             <div className="footer__link">
                 <a
-                    className={theme === DARK_THEME ? "footer-dark" : "footer-white"}
+                    className={
+                        theme === DARK_THEME ? "footer-dark" : "footer-white"
+                    }
                     href={enlace}
                     target="_blank"
                 >
                     {enlace}
                 </a>
-                <img src={iconoBook} alt="" className="footer__link__icono" />
+                <img
+                    src={iconoNewWindow}
+                    alt=""
+                    className="footer__link__icono"
+                />
             </div>
         </div>
     );
